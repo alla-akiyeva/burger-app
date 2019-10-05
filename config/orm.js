@@ -1,4 +1,4 @@
-const connection = require("./connection.js");
+const connection = require("./connection");
 
 // Object Relational Mapper (ORM)
 const orm = {
@@ -30,7 +30,6 @@ const orm = {
 // selectAll()
 // insertOne()
 // updateOne()
-
 
 
 // Export the ORM object in module.exports.
