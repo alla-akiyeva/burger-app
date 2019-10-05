@@ -6,14 +6,16 @@ const router = express.Router();
 // Create the router for the app, and export the router at the end of your file.
 
 router.get("/", function(req, res) {
-    // burger.all(function(data) {
-    //     const hbsObject = {
-    //         burgers: data
-    //     };
-    //     console.log(hbsObject);
-    //     res.render("index", {hbsObject});
-    // });
-    res.render("index", {});
+    burger.all(function(data) {
+        console.log("Burger Controller!!");
+        const hbsObject = {
+            burgers: data
+        };
+        console.log(hbsObject);
+        res.render("index", {hbsObject});
+        // res.render("index", {});
+    });
+    // res.render("index", {}); // - This part works, outside the function. The function above does not seem to work.
 });
 
 router.post("/api/cats", function(req, res) {

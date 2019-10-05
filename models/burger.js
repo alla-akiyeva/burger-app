@@ -4,21 +4,28 @@ var orm = require("../config/orm");
 
 const burger = {
     all: function (cb) {
+        console.log("here"); // - This part, outside the function, is working
         orm.selectAll("burgers", function (res) {
             cb(res);
+            console.log("this is orm", res);
         })
     },
-    insert: function (name, cb) {
-        orm.insertOne("burgers", name, function (res) {
+    insert: function (burger_name, cb) {
+        orm.insertOne("burgers", burger_name, function (res) {
             cb(res);
         })
     },
-    update: function (devoured, cb) {
-        orm.updateOne("burgers", devoured, function (res) {
+    update: function (devoured, id, cb) {
+        orm.updateOne("burgers", devoured, id, function (res) {
             cb(res);
         })
     }
-}
-// Export at the end of the burger.js file.
 
+    // all: orm.selectAll("burgers"),
+    // inset: orm.insertOne("burgers", "burger_name"),
+    // update: orm.updateOne("burgers", "devoured")
+}
+
+
+// Export at the end of the burger.js file.
 module.exports = burger;
