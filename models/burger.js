@@ -7,7 +7,7 @@ const burger = {
         console.log("here"); // - This part, outside the function, is working
         orm.selectAll("burgers", function (res) {
             cb(res);
-            console.log("this is orm", res);
+            // console.log("this is orm", res);
         })
     },
     insert: function (burger_name, cb) {

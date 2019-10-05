@@ -8,12 +8,15 @@ const router = express.Router();
 router.get("/", function(req, res) {
     burger.all(function(data) {
         console.log("Burger Controller!!");
+        // Passing results as an object so we can iterate through them in Handlebars
         const hbsObject = {
             burgers: data
         };
-        console.log(hbsObject);
-        res.render("index", {hbsObject});
-        // res.render("index", {});
+        console.table(data);
+        console.log(data[0].burger_name);
+        res.render("index", hbsObject);
+
+        // res.render("index", {data});
     });
     // res.render("index", {}); // - This part works, outside the function. The function above does not seem to work.
 });
