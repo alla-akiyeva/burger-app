@@ -1,10 +1,116 @@
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto.
 Create a button in index.handlebars that will submit the user input into the database. --}}
+<style>
+    span {
+        color: white;
+        display: block;
+        font-size: 22px;
+    }
 
-<span>{{ hbsObject }}</span>
+    .column {
+        width: 50%;
+        float: left;
+    }
 
-{{#each burgers}}
+    .container {
+        width: 60%;
+        margin: auto;
+        margin-top: 10%;
+    }
 
-    <button>{{ burger_name }}</button>
-    
-{{/each}}
+    button {
+        display: block;
+        padding: 5px;
+        margin: 3px;
+        border: none;
+        font-size: 15px;
+        border-radius: 7px;
+    }
+
+    .burgers {
+        min-height: 80px;
+        margin: 20px 0 20px 0;
+        float: left;
+    }
+
+    .eat-me {
+        margin-left: 20px;
+    }
+
+    .eat-me-btn {
+        background-color: orange;
+        border-radius: 10px;
+        hover:
+    }
+
+    .eat-me-btn:hover {
+        background-color: yellow;
+        box-shadow: 1px 1px;
+        cursor: pointer;
+    }
+
+    .form-inline {
+        clear: left;
+    }
+
+    input {
+        padding: 5px;
+        margin: 3px;
+        vertical-align: middle;
+        width: 40%;
+        font-size: 14px;
+    }
+
+    #add {
+        display: inline;
+        vertical-align: middle;
+        padding: 7px;
+    }
+
+    #add:hover {
+       box-shadow: 2px 2px;
+       cursor: pointer; 
+    }
+
+    .burg {
+        display: inline;
+        justify-content: space-between;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <span>Burgers You Can Eat</span>
+            <div class="burgers">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <button>{{ burger_name }}</button>
+                    {{/unless}}
+                {{/each}}
+            </div>
+            <div class="burgers eat-me">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <button class="eat-me-btn">Eat Me!</button>
+                    {{/unless}}
+                {{/each}}
+            </div>
+             <form class="form-inline">
+                <input type="text" placeholder="Add another burger">
+                <button type="submit" id="add">Add</button>
+            </form>
+        </div>
+        <div class="column">
+            <span>Already Eaten</span>
+            <div class="burgers">
+                {{#each burgers}}
+                    {{#if devoured }}
+                        <button>{{ burger_name }}</button>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
