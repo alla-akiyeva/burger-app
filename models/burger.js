@@ -10,8 +10,8 @@ const burger = {
             // console.log("this is orm", res);
         })
     },
-    insert: function (burger_name, cb) {
-        orm.insertOne("burgers", burger_name, function (res) {
+    insert: function (cols, vals, cb) {
+        orm.insertOne("burgers", cols, vals, function (res) {
             cb(res);
         })
     },

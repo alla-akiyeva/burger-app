@@ -1,3 +1,79 @@
 body {
     background: green;
 }
+
+span {
+    color: white;
+    display: block;
+    font-size: 22px;
+}
+
+.column {
+    width: 50%;
+    float: left;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+button {
+    display: block;
+    padding: 5px;
+    margin: 3px;
+    border: none;
+    font-size: 15px;
+    border-radius: 7px;
+}
+
+.burgers {
+    min-height: 80px;
+    margin: 20px 0 20px 0;
+    float: left;
+}
+
+.eat-me {
+    margin-left: 20px;
+}
+
+.eat-me-btn {
+    background-color: orange;
+    border-radius: 10px;
+    hover:
+}
+
+.eat-me-btn:hover {
+    background-color: yellow;
+    box-shadow: 1px 1px;
+    cursor: pointer;
+}
+
+.form-inline {
+    clear: left;
+}
+
+input {
+    padding: 5px;
+    margin: 3px;
+    vertical-align: middle;
+    width: 40%;
+    font-size: 14px;
+}
+
+#add {
+    display: inline;
+    vertical-align: middle;
+    padding: 7px;
+}
+
+#add:hover {
+   box-shadow: 2px 2px;
+   cursor: pointer; 
+}
+
+.burg {
+    display: inline;
+    justify-content: space-between;
+}

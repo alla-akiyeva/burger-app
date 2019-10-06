@@ -6,21 +6,26 @@ const orm = {
         let queryString = "SELECT * FROM ??";
         connection.query(queryString, [table], function(err, result) {
             if (err) throw err;
-            // console.log("Burger.js is passing " + table)
-            // console.log("I think this is working", result);
             cb(result);
         });
     },
-    insertOne: function(table, burger_name, cb) {
-        let queryString = "INSERT INTO ?? VALUES ??";
-        connection.query(queryString, [table, burger_name], function (err, result) {
+    insertOne: function(table, cols, vals, cb) {
+        cols = cols.toString();
+        // Since vals has values for two columns and the burger's name must be passed as a string enclosed in quotes, 
+        //we'll split vals like this:
+        burger_name = vals[0];
+        devoured = vals[1];
+        console.log(table, cols, vals);
+        let queryString = `INSERT INTO ${table} (${cols}) VALUES ('${burger_name}', ${devoured})`;
+        
+        console.log(queryString);
+        connection.query(queryString, [table, cols, vals], function (err, result) {
             if (err) throw err;
-            cb(results);
-            console.log("This shouldn't be showing up", result);
+            cb(result);
         });
     },
     updateOne: function (table, devoured, id, cb) {
-        let queryString = "UPDATE ?? SET ?? = TRUE WHERE ??";
+        let queryString = "UPDATE ?? SET ?? = TRUE WHERE ?";
         connection.query(queryString, [table, devoured, id], function (err, result) {
             if (err) throw err;
             cb(results);
