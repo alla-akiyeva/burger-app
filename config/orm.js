@@ -24,12 +24,24 @@ const orm = {
             cb(result);
         });
     },
-    updateOne: function (table, devoured, id, cb) {
-        let queryString = "UPDATE ?? SET ?? = TRUE WHERE ?";
-        connection.query(queryString, [table, devoured, id], function (err, result) {
+    // updateOne: function (table, devoured, id, cb) {
+    //     // // let queryString = `UPDATE ?? SET ?? = TRUE WHERE ?`;
+    //     // let queryString = `UPDATE ${table} SET  = TRUE WHERE ?`;
+    //     // connection.query(queryString, [table, devoured, id], function (err, result) {
+    //     //     if (err) throw err;
+    //     //     cb(results);
+    //     //     console.log("this won't show up right now either", result);
+    //     // });
+    // }
+
+    updateOne: function (table, cols, vals, cb) {
+        cols = cols.toString();
+        id = vals[0];
+        devoured = vals[1];
+        let queryString = `UPDATE ${table} SET devoured = ${devoured} WHERE id = ${id}`;
+        connection.query(queryString, [table, cols, vals], function (err, result) {
             if (err) throw err;
-            cb(results);
-            console.log("this won't show up right now either", result);
+            cb(result);
         });
     }
 }

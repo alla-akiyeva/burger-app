@@ -24,6 +24,26 @@ $(document).ready(function() {
             }
         );
     });
+
+    $(".eat-me-btn").on("click", function(event) {
+        let id = $(this).data("id");
+        console.log(typeof id);
+        let eatenBurger = {
+            id: id,
+            devoured: true
+        };
+        console.log(eatenBurger);
+
+        $.ajax("/api/burgers/:id", {
+            type: "PUT",
+            data: eatenBurger
+        }).then(
+            function () {
+                console.log("This burger is devoured");
+                location.reload();
+            }
+        );
+    });
 });
 
 // When "Eat it!" button is clicked, the "devoured" value is the corresponding burger is changed into TRUE. 

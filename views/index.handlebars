@@ -8,17 +8,20 @@ Create a button in index.handlebars that will submit the user input into the dat
             <div class="burgers">
                 {{#each burgers}}
                     {{#unless devoured}}
-                        <button>{{ burger_name }}</button>
+                        <div class="burger-btns">
+                            <span class="burger-btns name" data-id="{{id}}">{{ burger_name }}</span>
+                            <button class="eat-me-btn" data-id="{{id}}">Eat Me!</button>
+                        </div>
                     {{/unless}}
                 {{/each}}
             </div>
-            <div class="burgers eat-me">
+            {{!-- <div class="burgers eat-me">
                 {{#each burgers}}
                     {{#unless devoured}}
                         <button class="eat-me-btn">Eat Me!</button>
                     {{/unless}}
                 {{/each}}
-            </div>
+            </div> --}}
              <form class="form-inline">
                 <input type="text" id="new-burger" placeholder="Add another burger">
                 <button type="submit" id="add">Add</button>
