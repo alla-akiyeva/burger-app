@@ -24,15 +24,6 @@ const orm = {
             cb(result);
         });
     },
-    // updateOne: function (table, devoured, id, cb) {
-    //     // // let queryString = `UPDATE ?? SET ?? = TRUE WHERE ?`;
-    //     // let queryString = `UPDATE ${table} SET  = TRUE WHERE ?`;
-    //     // connection.query(queryString, [table, devoured, id], function (err, result) {
-    //     //     if (err) throw err;
-    //     //     cb(results);
-    //     //     console.log("this won't show up right now either", result);
-    //     // });
-    // }
 
     updateOne: function (table, cols, vals, cb) {
         cols = cols.toString();
@@ -46,15 +37,11 @@ const orm = {
     }
 }
 
-// UPDATE table_name SET field1 = new-value1, field2 = new-value2
-// [WHERE Clause]
-
 // In the orm.js file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
 
 // selectAll()
 // insertOne()
 // updateOne()
-
 
 // Export the ORM object in module.exports.
 module.exports = orm;

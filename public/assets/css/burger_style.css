@@ -1,5 +1,4 @@
 body {
-    /* background: url("../img/arabi-ishaque-vAAJI5sg9j4-unsplash.jpg"); */
     background: url("../img/timothy-barlin-v_4RGBh3wus-unsplash.jpg");
     background-size: cover;
     background-position-y: 25%;
@@ -9,11 +8,6 @@ span {
     color: black;
     display: block;
     font-size: 22px;
-}
-
-.column {
-    width: 50%;
-    float: left;
 }
 
 #burger-container {
@@ -41,12 +35,9 @@ button {
 .burgers {
     min-height: 250px;
     margin: 20px 0 20px 0;
-    /* float: left; */
-
     background: rgba(255, 255, 255, 0.8);
     width: 28%;
     padding: 2%;
-
     overflow: scroll;
 }
 
@@ -90,11 +81,6 @@ input {
    cursor: pointer; 
 }
 
-.burg {
-    display: inline;
-    justify-content: space-between;
-}
-
 .burger-btns {
     display: block;
 }
@@ -113,9 +99,3 @@ input {
     text-decoration: underline;
     font-weight: bold;
 }
-
-/* .eaten-burg {
-    display: inline-block;
-    float: right;
-    clear: right;
-} */

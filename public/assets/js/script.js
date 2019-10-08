@@ -1,5 +1,3 @@
-
-
 // When "add" button is clicked, get the value of the form and send it to database - front end API call
 
 $(document).ready(function() {
@@ -18,7 +16,7 @@ $(document).ready(function() {
             data: newBurger
         }).then(
             function () {
-                console.log("new burger added (supposedly)");
+                console.log("new burger added");
                 // Reload the page to get the updated burger list
                 location.reload();
             }
@@ -27,7 +25,6 @@ $(document).ready(function() {
 
     $(".eat-me-btn").on("click", function(event) {
         let id = $(this).data("id");
-        console.log(typeof id);
         let eatenBurger = {
             id: id,
             devoured: true

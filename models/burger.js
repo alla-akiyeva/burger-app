@@ -4,10 +4,8 @@ var orm = require("../config/orm");
 
 const burger = {
     all: function (cb) {
-        console.log("here"); // - This part, outside the function, is working
         orm.selectAll("burgers", function (res) {
             cb(res);
-            // console.log("this is orm", res);
         })
     },
     insert: function (cols, vals, cb) {
@@ -20,10 +18,6 @@ const burger = {
             cb(res);
         })
     }
-
-    // all: orm.selectAll("burgers"),
-    // inset: orm.insertOne("burgers", "burger_name"),
-    // update: orm.updateOne("burgers", "devoured")
 }
 
 
